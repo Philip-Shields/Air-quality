@@ -31,6 +31,7 @@ public class AirQualitySimple {
 	
 	//http://aqicn.org/json-api/doc/
 	static String apiKey="0000000000000000000000000";//my key
+	static String coOrdinates="-36.05035;146.942"; //southern hemisphere coordinates
 	
 	static String airQuality;	
 	static int aqiNumber;
@@ -52,7 +53,7 @@ public static void JsonAirQuality() throws IOException{
 	   
 	    aqi.setData(data);  
 	   
-	    URL url = new URL("https://api.waqi.info/feed/geo: -36.05035;146.942/?token="+apiKey); 
+	    URL url = new URL("https://api.waqi.info/feed/geo: "+coOrdinates+"/?token="+apiKey); 
 	    HttpURLConnection conn = (HttpURLConnection) url.openConnection();
         conn.setRequestMethod("GET");
 	   
